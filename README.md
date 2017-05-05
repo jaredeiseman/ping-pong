@@ -12,7 +12,7 @@ The Ping Pong app will take in a positive integer from a user, then process that
 
 | Behavior| Input Example | Output Example |
 |:-------------:|:-------------:|:-------------:|
-| Validate the entered number is a positive integer | 1 or -1 | true or false |
+| Validate the entered number is a positive integer | -1 or 0 | give visual feedback to user |
 | Count up to the provided number | 5 | [1,2,3,4,5] |
 | Replace all numbers divisible by 3 with "ping" | [1,2,3,4,5,6] | [1,2,"ping",4,5,"ping"] |
 | Replace all numbers divisible by 5 with "pong" | [1,2,3,4,5] | [1,2,3,4,"pong"] |

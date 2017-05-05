@@ -42,6 +42,16 @@ html,body,.container {
   font-size: 22px;
 }
 
+.glyphicon {
+  display: none;
+  margin-top: 9px;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .btn {
   border-radius: 0;
   color: #fff;

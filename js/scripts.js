@@ -18,7 +18,7 @@ var pingPong = function(input, order) {
   return output;
 };
 
-//Validate the entered number is a positive integer
+//additional validation to catch if visual feedback logic fails
 var validate = function(input) {
   if (input > 0) {
     return true;
@@ -83,7 +83,7 @@ $(document).ready(function() {
     var result = pingPong(input, order);
     //Clear existing results from results div
     $('#results ul li').remove();
-    //Display error message when validation fails
+    //additional validation to catch errors
     if (!result) {
       $('#results ul').append('<li>The number you provided is invalid, please enter a positive integer.</li>');
       return;
@@ -93,5 +93,30 @@ $(document).ready(function() {
       $('#results ul').append('<li>' + element + '</li>');
     });
     $('#results ul li').fadeIn(1000);
+  });
+
+  //Validate the entered number is a positive integer
+  $('input[name="number"]').keydown(function(e) {
+    console.log(e.which);
+    if (e.which === 189 || e.which === 109) {
+      //stops the "-" symbol to prevent negative numbers from qwerty or numpad
+      e.preventDefault();
+      $('input[name="number"]').parent().addClass('has-error has-feedback');
+      $('.glyphicon').show();
+    } else if (e.which === 48 && $('input[name="number"]').val().length === 0) {
+      //stops "0" if it is the first number entered
+      e.preventDefault();
+      $('input[name="number"]').parent().addClass('has-error has-feedback');
+      $('.glyphicon').show();
+    } else if (e.which === 190 || e.which === 110) {
+      //stops "." entered from either the qwerty side of the keyboard, or the numpad
+      e.preventDefault();
+      $('input[name="number"]').parent().addClass('has-error has-feedback');
+      $('.glyphicon').show();
+    } else {
+      //removes the visual feedback if it already existed
+      $('input[name="number"]').parent().removeClass('has-error has-feedback');
+      $('.glyphicon').hide();
+    }
   });
 });
