@@ -102,8 +102,9 @@ $(document).ready(function() {
       e.preventDefault();
       $('input[name="number"]').parent().addClass('has-error has-feedback');
       $('.glyphicon').show();
-    } else if (e.which === 48 && $('input[name="number"]').val().length === 0) {
-      //stops "0" if it is the first number entered
+    } else if ((e.which === 48 && $('input[name="number"]').val().length === 0) ||
+               (e.which === 96 && $('input[name="number"]').val().length === 0)) {
+      //stops "0" if it is the first number entered from qwerty or numpad
       e.preventDefault();
       $('input[name="number"]').parent().addClass('has-error has-feedback');
       $('.glyphicon').show();

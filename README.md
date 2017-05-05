@@ -17,7 +17,7 @@ The Ping Pong app will take in a positive integer from a user, then process that
 | Replace all numbers divisible by 3 with "ping" | [1,2,3,4,5,6] | [1,2,"ping",4,5,"ping"] |
 | Replace all numbers divisible by 5 with "pong" | [1,2,3,4,5] | [1,2,3,4,"pong"] |
 | Replace all numbers divisible by 15 with "ping-pong" | [1,2,3 ... 14,15] | [1,2,3 ... 14,"ping-pong"] |
-| Allow user to select the order in which to display the information (ascending/descending) | [1,2,"ping",4,"pong" ... 14, "ping-pong"] | 1,2,"ping",4,"pong" ... 14, "ping-pong" OR "ping-pong",14 ... "pong",4,"ping",2,1 |
+| Allow user to select the order in which to display the information (ascending/descending) | [1,2,"ping",4,"pong" ... 14, "ping-pong"] | [1,2,"ping",4,"pong" ... 14, "ping-pong" OR "ping-pong",14 ... "pong",4,"ping",2,1] |
 
 
 ## Setup/Installation Requirements
