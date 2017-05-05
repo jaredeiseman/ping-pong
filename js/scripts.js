@@ -1,3 +1,13 @@
+var replaceFifteens = function(input) {
+  var result = input.map(function(element, index) {
+    if ((index + 1) % 15 === 0) {
+      return "ping-pong";
+    }
+    return element;
+  })
+  return result;
+};
+
 var replaceFives = function(input) {
   var result = input.map(function(element, index) {
     if ((index + 1) % 5 === 0) {
@@ -6,7 +16,7 @@ var replaceFives = function(input) {
     return element;
   })
   return result;
-}
+};
 
 var replaceThrees = function(input) {
   var result = input.map(function(element, index) {
@@ -16,7 +26,7 @@ var replaceThrees = function(input) {
     return element;
   })
   return result;
-}
+};
 
 var count = function(input) {
   var result = [];
@@ -35,12 +45,16 @@ var validate = function(input) {
 
 var pingPong = function(input) {
   var output;
+
   if (!validate(input)) {
     return false;
   }
+
   output = count(input);
   output = replaceThrees(output);
   output = replaceFives(output);
+  output = replaceFifteens(output);
+
   return output;
 };
 
