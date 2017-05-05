@@ -1,3 +1,13 @@
+var replaceFives = function(input) {
+  var result = input.map(function(element) {
+    if (element % 5 === 0) {
+      return "pong";
+    }
+    return element;
+  })
+  return result;
+}
+
 var replaceThrees = function(input) {
   var result = input.map(function(element) {
     if (element % 3 === 0) {
@@ -30,6 +40,7 @@ var pingPong = function(input) {
   }
   output = count(input);
   output = replaceThrees(output);
+  output = replaceFives(output);
   return output;
 };
 
