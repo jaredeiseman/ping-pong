@@ -92,5 +92,6 @@ $(document).ready(function() {
     result.forEach(function(element) {
       $('#results ul').append('<li>' + element + '</li>');
     });
+    $('#results ul li').fadeIn(1000);
   });
 });

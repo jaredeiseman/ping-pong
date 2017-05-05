@@ -17,7 +17,7 @@ html,body,.container {
 
 .container {
   margin-top: 50px;
-  padding: 50px;
+  padding: 10px 50px;
   background-color: rgba(0, 0, 0, 0.6);
   min-height: 100%;
   border: 2px solid #fff;
@@ -56,4 +56,5 @@ html,body,.container {
 
 #results ul li {
   font-size: 18px;
+  display: none;
 }
