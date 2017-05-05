@@ -1,0 +1,24 @@
+@font-face {
+  font-family: pong;
+  src: url(../fonts/arcadeclassic.ttf);
+}
+
+body {
+  font-family: pong;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+#header {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #fff;
+}
+
+.btn {
+  border-radius: 0;
+  color: #fff;
+  background-color: #000;
+  font-size: 20px;
+  width: 100%;
+}

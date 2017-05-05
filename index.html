@@ -11,17 +11,24 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="jumbotron">
+        <div class="col-md-12 text-center" id="header">
           <h1>Ping-Pong</h1>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-md-push-9">
           <!-- side bar -->
-          <h2>Some content</h2>
+          <h2>About This App</h2>
+          <hr>
+          <h3>Created by:</h3>
+          <h4>Jared Eiseman</h4>
+          <h3>Github:</h3>
+          <h4><a href="https://www.github.com/jaredeiseman" target="_blank">https://www.github.com/jaredeiseman/</a></h4>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6">
           <!-- content -->
+          <h2 class="text-center">Select Your Options</h2>
+          <hr>
           <form id="user-input">
             <div class="form-group">
               <label for="order">Select an order for your result to be displayed:</label>
@@ -35,14 +42,16 @@
               <input type="number" name="number" class="form-control">
             </div>
             <div class="form-group">
-              <button type="submit" id="submit-button" class="btn btn-danger">Submit</button>
+              <button type="submit" id="submit-button" class="btn btn-default">Submit</button>
             </div>
           </form>
-          <div id="results">
-            <ul>
+        </div>
+        <div class="col-md-3 col-md-pull-9" id="results">
+          <h2>Results</h2>
+          <hr>
+          <ul>
 
-            </ul>
-          </div>
+          </ul>
         </div>
       </div>
     </div>
