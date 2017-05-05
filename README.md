@@ -40,6 +40,6 @@ There are no known bugs at this time, but please contact the creator with questi
 
 
 ## Licensing
-This application features MIT licensing.
+MIT
 
 Copyright &copy; 2017 Jared Eiseman All Rights Reserved.
