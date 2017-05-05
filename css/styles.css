@@ -31,6 +31,7 @@ html,body,.container {
 
 #header h1 {
   font-size: 80px;
+  text-shadow: 5px 5px 1px rgba(255,255,255,0.5);
 }
 
 #user-input {
@@ -50,5 +51,9 @@ html,body,.container {
 }
 
 .details {
-  font-size: 16px;
+  font-size: 18px;
+}
+
+#results ul li {
+  font-size: 18px;
 }
