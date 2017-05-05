@@ -43,7 +43,7 @@ var validate = function(input) {
   return false;
 };
 
-var pingPong = function(input) {
+var pingPong = function(input, order) {
   var output;
 
   if (!validate(input)) {
@@ -55,6 +55,10 @@ var pingPong = function(input) {
   output = replaceFives(output);
   output = replaceFifteens(output);
 
+  if (order === -1) {
+    output = output.reverse();
+  }
+
   return output;
 };
 
@@ -63,8 +67,9 @@ $(document).ready(function() {
     e.preventDefault();
     //Gather user input
     var input = $('input[name="number"]').val();
+    var order = parseInt($('#order').val());
     //Call business logic to process input
-    var result = pingPong(input);
+    var result = pingPong(input, order);
     //Clear existing results from results div
     $('#results ul li').remove();
     if (!result) {

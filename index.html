@@ -24,6 +24,13 @@
           <!-- content -->
           <form id="user-input">
             <div class="form-group">
+              <label for="order">Select an order for your result to be displayed:</label>
+              <select class="form-control" name="order" id="order">
+                <option value="1">Ascending</option>
+                <option value="-1">Descending</option>
+              </select>
+            </div>
+            <div class="form-group">
               <label for="number">Please enter a positive number:</label>
               <input type="number" name="number" class="form-control">
             </div>
