@@ -1,10 +1,20 @@
-var movingLeft = false;
+var movingLeft = true;
+var movingUp = true;
 
-var movingToggle = function (direction) {
+var movingXToggle = function (direction) {
   if (direction === true) {
     movingLeft = false;
   } else {
     movingLeft = true;
+  }
+  return;
+}
+
+var movingYToggle = function (direction) {
+  if (direction === true) {
+    movingUp = false;
+  } else {
+    movingUp = true;
   }
   return;
 }
@@ -37,7 +47,7 @@ var moveBallLeft = function (currentValue) {
     result -= 10;
   } else {
     result = 35;
-    movingToggle(movingLeft);
+    movingXToggle(movingLeft);
   }
   result = result.toString() + "px";
   return result;
@@ -49,14 +59,39 @@ var moveBallRight = function (currentValue, width) {
     result += 10;
   } else {
     result = width - 60;
-    movingToggle(movingLeft);
+    movingXToggle(movingLeft);
+  }
+  result = result.toString() + "px";
+  return result;
+}
+
+var moveBallUp = function (currentValue) {
+  result = parseInt(currentValue.substring(0, currentValue.length - 1));
+  if (result >= 25) {
+    result -= 5;
+  } else {
+    result = 7;
+    movingYToggle(movingUp);
+    console.log('fa');
+  }
+  result = result.toString() + "px";
+  return result;
+}
+
+var moveBallDown = function (currentValue, height) {
+  result = parseInt(currentValue.substring(0, currentValue.length - 1));
+  if (result <= height - 25) {
+    result += 7;
+  } else if (height - result < 25) {
+    result = height - 25;
+    movingYToggle(movingUp);
   }
   result = result.toString() + "px";
   return result;
 }
 
 $(document).ready(function() {
-  var fps = 45;
+  var fps = 30;
   var now;
   var then = Date.now();
   var interval = 1000/fps;
@@ -70,12 +105,24 @@ $(document).ready(function() {
           then = now - (delta % interval);
 
           var currentValue = $('.ball').css('left');
+          var verticalValue = $('.ball').css('top');
           var intValue = parseInt(currentValue.substring(0, currentValue.length - 1));
           var width = $('.game-board').width();
+          var height = $('.game-board').height();
             if (movingLeft) {
               $('.ball').css('left', moveBallLeft(currentValue));
+              if (movingUp) {
+                $('.ball').css('top', moveBallUp(verticalValue));
+              } else {
+                $('.ball').css('top', moveBallDown(verticalValue, height));
+              }
             } else {
               $('.ball').css('left', moveBallRight(currentValue, width));
+              if (movingUp) {
+                $('.ball').css('top', moveBallUp(verticalValue));
+              } else {
+                $('.ball').css('top', moveBallDown(verticalValue, height));
+              }
             }
       }
   }
