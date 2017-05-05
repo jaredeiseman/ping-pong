@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, .container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+.score-board {
+  height: 10%;
+  border-bottom: 5px solid white;
+}
+.game-board {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+
+.left-paddle, .right-paddle, .ball {
+  background-color: white;
+  position: absolute;
+}
+
+.left-paddle, .right-paddle {
+  width: 20px;
+  height: 100px;
+}
+
+.left-paddle {
+  left: 10px;
+  top: calc(50% - 40px);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  top: calc(50% - 10px);
+}
+
+.right-paddle {
+  right: 10px;
+  top: calc(50% - 40px);
+}
