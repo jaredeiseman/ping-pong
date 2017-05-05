@@ -1,6 +1,6 @@
 var replaceFives = function(input) {
-  var result = input.map(function(element) {
-    if (element % 5 === 0) {
+  var result = input.map(function(element, index) {
+    if ((index + 1) % 5 === 0) {
       return "pong";
     }
     return element;
@@ -9,8 +9,8 @@ var replaceFives = function(input) {
 }
 
 var replaceThrees = function(input) {
-  var result = input.map(function(element) {
-    if (element % 3 === 0) {
+  var result = input.map(function(element, index) {
+    if ((index + 1) % 3 === 0) {
       return "ping";
     }
     return element;
