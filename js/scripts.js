@@ -9,9 +9,10 @@ var pingPong = function(input, order) {
     return false;
   }
   output = count(input);
-  output = replaceThrees(output);
-  output = replaceFives(output);
-  output = replaceFifteens(output);
+  // output = replaceThrees(output);
+  // output = replaceFives(output);
+  // output = replaceFifteens(output);
+  output = replace(output);
   if (order === -1) {
     output = output.reverse();
   }
@@ -35,38 +36,60 @@ var count = function(input) {
   return result;
 };
 
-//Replace all numbers divisible by 3 with "ping"
-var replaceThrees = function(input) {
+//refactor replaceThrees, replaceFives, replaceFifteens to single loop
+var replace = function(input) {
   var result = input.map(function(element, index) {
+    var output = "";
     if ((index + 1) % 3 === 0) {
-      return "ping";
+      output = "ping";
     }
-    return element;
-  })
-  return result;
-};
-
-//Replace all numbers divisible by 5 with "pong"
-var replaceFives = function(input) {
-  var result = input.map(function(element, index) {
     if ((index + 1) % 5 === 0) {
-      return "pong";
+      output = "pong";
     }
-    return element;
-  })
-  return result;
-};
-
-//Replace all numbers divisible by 15 with "ping-pong"
-var replaceFifteens = function(input) {
-  var result = input.map(function(element, index) {
     if ((index + 1) % 15 === 0) {
-      return "ping-pong";
+      output = "ping-pong";
     }
-    return element;
-  })
+    if (output === "") {
+      return element;
+    } else {
+      return output;
+    }
+  });
   return result;
-};
+}
+
+// //Replace all numbers divisible by 3 with "ping"
+// var replaceThrees = function(input) {
+//   var result = input.map(function(element, index) {
+//     if ((index + 1) % 3 === 0) {
+//       return "ping";
+//     }
+//     return element;
+//   })
+//   return result;
+// };
+//
+// //Replace all numbers divisible by 5 with "pong"
+// var replaceFives = function(input) {
+//   var result = input.map(function(element, index) {
+//     if ((index + 1) % 5 === 0) {
+//       return "pong";
+//     }
+//     return element;
+//   })
+//   return result;
+// };
+//
+// //Replace all numbers divisible by 15 with "ping-pong"
+// var replaceFifteens = function(input) {
+//   var result = input.map(function(element, index) {
+//     if ((index + 1) % 15 === 0) {
+//       return "ping-pong";
+//     }
+//     return element;
+//   })
+//   return result;
+// };
 
 
 ////////////////////////////////////////////////////////////////////////////////
