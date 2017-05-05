@@ -8,11 +8,29 @@ body {
   background-color: #000;
   color: #fff;
   letter-spacing: 1px;
+  background-image: url(../img/bg.jpg);
+}
+
+html,body,.container {
+  min-height: 100%;
+}
+
+.container {
+  margin-top: 50px;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-height: 100%;
+  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
 #header {
   margin-bottom: 50px;
   border-bottom: 1px solid #fff;
+}
+
+#header h1 {
+  font-size: 80px;
 }
 
 #user-input {
@@ -29,4 +47,8 @@ body {
   background-color: #000;
   font-size: 20px;
   width: 100%;
+}
+
+.details {
+  font-size: 16px;
 }
