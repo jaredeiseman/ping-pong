@@ -15,6 +15,14 @@ body {
   border-bottom: 1px solid #fff;
 }
 
+#user-input {
+  font-size: 20px;
+}
+
+#user-input .form-group select, #user-input .form-group input {
+  font-size: 22px;
+}
+
 .btn {
   border-radius: 0;
   color: #fff;
