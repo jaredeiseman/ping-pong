@@ -97,7 +97,6 @@ $(document).ready(function() {
 
   //Validate the entered number is a positive integer
   $('input[name="number"]').keydown(function(e) {
-    console.log(e.which);
     if (e.which === 189 || e.which === 109) {
       //stops the "-" symbol to prevent negative numbers from qwerty or numpad
       e.preventDefault();
