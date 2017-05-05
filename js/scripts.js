@@ -1,3 +1,13 @@
+var replaceThrees = function(input) {
+  var result = input.map(function(element) {
+    if (element % 3 === 0) {
+      return "ping";
+    }
+    return element;
+  })
+  return result;
+}
+
 var count = function(input) {
   var result = [];
   for (var i = 1; i <= input; i++) {
@@ -19,7 +29,7 @@ var pingPong = function(input) {
     return false;
   }
   output = count(input);
-  console.log(output);
+  output = replaceThrees(output);
   return output;
 };
 
