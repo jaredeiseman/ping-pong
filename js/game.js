@@ -59,7 +59,7 @@ var moveBallRight = function (currentValue, width) {
 
 $(document).ready(function() {
 
-  var fps = 60;
+  var fps = 45;
   var now;
   var then = Date.now();
   var interval = 1000/fps;

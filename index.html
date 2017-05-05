@@ -2,65 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Ping-Pong</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+    <title>Ping Pong - The Game</title>
+    <link rel="stylesheet" href="css/game.css" type="text/css" />
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/game.js"></script>
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center" id="header">
-          <h1>Ping-Pong</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-3 col-md-push-9">
-          <!-- side bar -->
-          <h2>App Details</h2>
-          <hr>
-          <ul>
-            <li class="details">All numbers divisible by 3 will be replaced by "ping"</li>
-            <li class="details">All numbers divisible by 5 will be replaced by "pong"</li>
-            <li class="details">All numbers divisible by 15 will be replaced by "ping-pong"</li>
-            <li class="details">Results will be displayed in the left hand column by order decided in first form option</li>
-          </ul>
-          <h2>About This App</h2>
-          <hr>
-          <h3>Created by:</h3>
-          <h4>Jared Eiseman</h4>
-          <h3>Github:</h3>
-          <h4><a href="https://www.github.com/jaredeiseman" target="_blank">Jared Eiseman</a></h4>
-        </div>
-        <div class="col-md-6">
-          <!-- content -->
-          <h2 class="text-center">Select Your Options</h2>
-          <hr>
-          <form id="user-input">
-            <div class="form-group">
-              <label for="order">Select an order for your result to be displayed:</label>
-              <select class="form-control" name="order" id="order">
-                <option value="1">Ascending</option>
-                <option value="-1">Descending</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="number">Please enter a positive integer:</label>
-              <input type="number" name="number" class="form-control">
-              <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-            </div>
-            <div class="form-group">
-              <button type="submit" id="submit-button" class="btn btn-default">Submit</button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-3 col-md-pull-9" id="results">
-          <h2>Results</h2>
-          <hr>
-          <ul>
+      <div class="score-board">
 
-          </ul>
+      </div>
+      <div class="game-board">
+        <div class="left-paddle">
+
+        </div>
+        <div class="ball" id="ball">
+
+        </div>
+        <div class="right-paddle">
+
         </div>
       </div>
     </div>
